@@ -1,0 +1,14 @@
+%chk=D:\APPs\lihaibei\molecules-use\quiz\Cinfv.chk
+# hf/3-21g geom=connectivity
+
+Title Card Required
+
+0 1
+ C                  0.00000000    0.00000000   -0.50187143
+ H                  0.00000000    0.00000000   -1.50187143
+ N                  0.00000000    0.00000000    0.64472857
+
+ 1 2 1.0 3 3.0
+ 2
+ 3
+

@@ -1,0 +1,210 @@
+:root {
+  font-family: "Source Sans 3", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  color-scheme: light;
+  color: #333;
+  background-color: #ffffff;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  --panel-border: rgba(226, 232, 240, 0.95);
+  --panel-shadow: 0 18px 40px rgba(15, 23, 42, 0.08);
+  --text-main: #111827;
+  --text-soft: #4b5563;
+  --text-faint: #6b7280;
+  --brand-red: #d62839;
+  --brand-blue: #2563eb;
+  --panel-bg: rgba(255, 255, 255, 0.98);
+}
+
+a {
+  font-weight: 500;
+  color: inherit;
+  text-decoration: inherit;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at top left, rgba(37, 99, 235, 0.08), transparent 24%),
+    linear-gradient(180deg, #f8fafc 0%, #f1f5f9 100%);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+#app {
+  width: 100%;
+  min-height: 100vh;
+}
+
+.page {
+  width: min(1240px, 100%);
+  margin: 0 auto;
+  padding: clamp(1rem, 3vw, 2rem);
+}
+
+.page-shell {
+  display: grid;
+  gap: 1.25rem;
+}
+
+.page-hero {
+  position: relative;
+  overflow: hidden;
+  padding: clamp(1.45rem, 3vw, 2.1rem);
+  border-radius: 1.75rem;
+  background:
+    radial-gradient(circle at top left, rgba(84, 110, 255, 0.16), transparent 36%),
+    radial-gradient(circle at top right, rgba(214, 40, 57, 0.12), transparent 34%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.98), rgba(245, 247, 250, 0.96));
+  box-shadow: 0 22px 60px rgba(17, 24, 39, 0.12);
+}
+
+.page-eyebrow {
+  margin: 0 0 0.45rem;
+  font-size: 0.82rem;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--brand-red);
+}
+
+.page-title {
+  margin: 0;
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  line-height: 1.12;
+  color: var(--text-main);
+}
+
+.page-lead {
+  max-width: 62rem;
+  margin: 0.85rem 0 0;
+  font-size: clamp(1rem, 1.9vw, 1.08rem);
+  line-height: 1.72;
+  color: var(--text-soft);
+}
+
+.panel,
+.page-panel {
+  border: 1px solid var(--panel-border);
+  background: var(--panel-bg);
+  border-radius: 1.3rem;
+  box-shadow: var(--panel-shadow);
+}
+
+.page-panel {
+  padding: clamp(1rem, 2vw, 1.4rem);
+}
+
+.module-grid {
+  display: grid;
+  grid-template-columns: minmax(250px, 310px) minmax(0, 1fr) minmax(250px, 320px);
+  gap: 1.1rem;
+  align-items: stretch;
+}
+
+.stack {
+  display: grid;
+  gap: 0.9rem;
+}
+
+.panel-title {
+  margin: 0;
+  font-size: 0.86rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-faint);
+}
+
+.soft-text {
+  margin: 0;
+  color: var(--text-soft);
+  line-height: 1.64;
+}
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  padding: 0.32rem 0.72rem;
+  background: rgba(37, 99, 235, 0.08);
+  color: #1d4ed8;
+  font-size: 0.82rem;
+  font-weight: 700;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.45rem;
+  border-radius: 0.92rem;
+  min-width: 6rem;
+  min-height: 2.5rem;
+  padding: 0.55rem 0.9rem;
+  border: 1px solid rgba(96, 165, 250, 0.55);
+  cursor: pointer;
+  color: #1d4ed8;
+  background: linear-gradient(180deg, rgba(219, 234, 254, 0.98), rgba(191, 219, 254, 0.92));
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 12px 24px rgba(37, 99, 235, 0.12);
+}
+
+.btn:disabled {
+  cursor: not-allowed;
+  opacity: 0.55;
+  transform: none;
+  box-shadow: none;
+}
+
+.btn--ghost {
+  background: rgba(255, 255, 255, 0.94);
+  color: #1f2937;
+  border-color: rgba(203, 213, 225, 0.95);
+}
+
+@media (max-width: 1320px) {
+  .module-grid {
+    grid-template-columns: minmax(220px, 260px) minmax(0, 1fr);
+  }
+
+  .module-grid > :last-child {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 960px) {
+  .page {
+    padding: 0.9rem;
+  }
+
+  .page-hero {
+    border-radius: 1.35rem;
+    padding: 1.2rem;
+  }
+
+  .module-grid {
+    grid-template-columns: 1fr;
+  }
+}
